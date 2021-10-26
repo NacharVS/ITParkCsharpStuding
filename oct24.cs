@@ -4,6 +4,25 @@ namespace ITParkStuding
 {
     class oct24
     {
+        public static void SimpleMultiplicators()
+        {
+            int a = 256;
+            int multiplicator = 2;
+
+            while(a > 1)
+            {
+                if(a % multiplicator == 0)
+                {
+                    Console.WriteLine(multiplicator);
+                    a = a / multiplicator;
+                }
+                else
+                {
+                    multiplicator++;
+                }
+            }
+        }
+
         static void CountOfSeven()
         {
             int N = int.Parse(Console.ReadLine());
