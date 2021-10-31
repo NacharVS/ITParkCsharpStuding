@@ -39,7 +39,15 @@ namespace ITParkStuding
             Unit.Attack(unit1,unit2);
             unit1.UnitInfo();
             unit2.UnitInfo();
-
+            Console.WriteLine("------------------------");
+            unit2.SelfHeal();
+            unit2.UnitInfo();
+            unit2.SelfHeal();
+            unit2.UnitInfo();
+            unit2.SelfHeal();
+            unit2.UnitInfo();
+            unit2.SelfHeal();
+            unit2.UnitInfo();
 
         }
     }
