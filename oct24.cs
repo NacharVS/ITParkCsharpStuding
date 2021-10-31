@@ -4,7 +4,7 @@ namespace ITParkStuding
 {
     class oct24
     {
-        public static void SimpleMultiplicators()
+        public void SimpleMultiplicators()
         {
             int a = 256;
             int multiplicator = 2;

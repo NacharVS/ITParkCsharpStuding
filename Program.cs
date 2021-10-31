@@ -1,24 +1,46 @@
-﻿using System;
+﻿using ITParkStuding.Game;
+using System;
 using System.Threading;
 
 namespace ITParkStuding
 {
     class Program
     {
+        static int Factorial(int n)
+        {
+            if (n > 1)
+                return n * Factorial(n - 1);
+            else
+                return 1;
+        }
+        
+        static void ArrayGenerator(int[]array, int a, int b)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(a,b);
+                Console.Write($" {array[i]}");
+            }
+        }
+        static void ArrayGenerator(int[] array, int a)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(a);
+                Console.Write($" {array[i]}");
+            }
+        }
+
         static void Main(string[] args)
         {
+            Unit unit1 = new Unit(100, 20, 0);
+            Unit unit2 = new Unit(100, 20);
 
-            //1 Сумма главной диагонали
-            //2 Максимальный элемент в каждой строке
-            //3 сумма 2х массивов
+            Unit.Attack(unit1,unit2);
+            unit1.UnitInfo();
+            unit2.UnitInfo();
 
-            // Заполнить 2Дмассив по правилу
-            // 0 1 2 3 4 5
-            // 1 2 3 4 5 0
-            // 2 3 4 5 0 1
-            // 3 4 5 0 1 2
-            // 4 5 0 1 2 3
-            // 5 0 1 2 3 4
+
         }
     }
 }
