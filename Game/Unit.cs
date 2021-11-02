@@ -4,7 +4,7 @@ namespace ITParkStuding.Game
 {
     class Unit
     {
-        private string _name;
+        internal string _name;
         private int _currentHealth;
         private int _maxHealth;
         private int _lvl;
