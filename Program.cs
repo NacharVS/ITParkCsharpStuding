@@ -33,21 +33,19 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Unit unit1 = new Unit(100, 20, 0);
-            Unit unit2 = new Unit(100, 20);
+            Unit unit1 = new Unit("Valera", 100, 50, 0, 100);
+            Unit unit2 = new Unit("Ivan", 100, 20, 0, 100);
 
-            Unit.Attack(unit1,unit2);
-            unit1.UnitInfo();
+            Unit.Attack(unit1, unit2);
             unit2.UnitInfo();
-            Console.WriteLine("------------------------");
-            unit2.SelfHeal();
+            Unit.Attack(unit1, unit2);
             unit2.UnitInfo();
-            unit2.SelfHeal();
+            Unit.Attack(unit1, unit2);
             unit2.UnitInfo();
-            unit2.SelfHeal();
-            unit2.UnitInfo();
-            unit2.SelfHeal();
-            unit2.UnitInfo();
+
+            
+            
+            
 
         }
     }

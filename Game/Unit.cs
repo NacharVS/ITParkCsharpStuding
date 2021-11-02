@@ -4,52 +4,53 @@ namespace ITParkStuding.Game
 {
     class Unit
     {
-        public int health;
-        public int damage;
+        private string _name;
+        private int _health;
+        private int _maxHealth;
+        private int _damage;
         private int _energy;
-        private int _lvl;
+        private int _lvl;    
 
-        public Unit(int hp, int dmg, int lvlpar)
+        public Unit(string name, int hp, int dmg, int lvlpar, int max)
         {
+            _name = name;
             _lvl = lvlpar;
-            health = hp;
-            damage = dmg;
+            _health = hp;
+            _damage = dmg;
+            _maxHealth = max; 
         }
 
-        public Unit(int hp, int dmg)
-        {
-            _lvl = 1;
-            _energy = 30;
-            health = hp;
-            damage = dmg;
-        }
-
-        public void LvlChange()
-        {
-            _lvl += 1;
-        }
-
-        public void SelfHeal()
-        {
-            if (_energy <= 0)
-                Console.WriteLine("energy low");
-            else
+        public int Health 
+        { 
+            get => _health;
+           
+            private set 
             {
-                _energy -= 10;
-                health += 10;
-                if (health > 100)
-                    health = 100;
-            }
+                if (value < 0)
+                {
+                    _health = 0;
+                    Death();
+                }
+                else
+                    if (value > _maxHealth)
+                    _health = _maxHealth;
+                else
+                    _health = value;
+            } 
+        }
+        private void Death()
+        {
+            Console.WriteLine("Unit dead");
         }
         public static void Attack(Unit unit1, Unit unit2)
         {
-            unit2.health -= new Random().Next(unit1.damage);
+            unit2.Health -= new Random().Next(unit1._damage);
         }
 
         public void UnitInfo()
         {
-            Console.WriteLine($"current health - {health}");
-            Console.WriteLine($" damage - {damage}");
+            Console.WriteLine($"current health - {Health}");
+            Console.WriteLine($" damage - {_damage}");
             Console.WriteLine($" energy - {_energy}");
             Console.WriteLine($" level -  {_lvl}");
         }
