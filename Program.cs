@@ -33,19 +33,30 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Unit unit1 = new Unit("Valera", 100, 50, 0, 100);
-            Unit unit2 = new Unit("Ivan", 100, 20, 0, 100);
+            Warrior war1 = new Warrior(20);
+            Warrior war2 = new Warrior(30);
 
-            Unit.Attack(unit1, unit2);
-            unit2.UnitInfo();
-            Unit.Attack(unit1, unit2);
-            unit2.UnitInfo();
-            Unit.Attack(unit1, unit2);
-            unit2.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
+            Actions.Fight(war1, war2);
+            war1.UnitInfo();
 
-            
-            
-            
+
+
+
+
+
+
 
         }
     }
