@@ -33,23 +33,10 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Warrior war1 = new Warrior(20);
-            Warrior war2 = new Warrior(30);
-
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
-            Actions.Fight(war1, war2);
-            war1.UnitInfo();
+            Archer archer = new Archer(2, 5, 20);
+            Actions.RangeFight(archer);
+            Actions.RangeFight(archer);
+            Actions.RangeFight(archer);
 
 
 

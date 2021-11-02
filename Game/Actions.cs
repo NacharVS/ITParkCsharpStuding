@@ -8,5 +8,18 @@ namespace ITParkStuding.Game
         {
             war1.Health -= war2.MleeDamage;
         }
+
+        public static void RangeFight(Archer archer)
+        {
+           if(archer.ArrowsCount > 0)
+            {
+                Console.WriteLine(archer.RangeDamage);
+                archer.ArrowsCount -= 1;
+            }
+            else
+            {
+                Console.WriteLine(archer.MleeDamahe);
+            }
+        }
     }
 }

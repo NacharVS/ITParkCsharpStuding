@@ -9,22 +9,21 @@ namespace ITParkStuding.Game
     class Archer : Unit
     {
         private int _arrowsCount;
+        private int _rangeDamage;
         private int _mleeDamage;
 
-        public Archer(int arrowsCount, int mleeDamage): base("Archer", 100, 100, 0)
+        public Archer(int arrowsCount, int mleeDamage, int rangeDamage): base("Archer", 100, 100, 0)
         {
-            _arrowsCount = arrowsCount;
+            ArrowsCount = arrowsCount;
             _mleeDamage = mleeDamage;
+            _rangeDamage = rangeDamage;
         }
 
-        public void Shoot()
-        {
+        public int RangeDamage => _rangeDamage;
+        public int MleeDamahe => _mleeDamage;
 
-        }
+        public int ArrowsCount { get => _arrowsCount; set => _arrowsCount = value; }
 
-        private void MleeFight()
-        {
-            Console.WriteLine($"{_name} has chenged on mlee");
-        }
+
     }
 }
