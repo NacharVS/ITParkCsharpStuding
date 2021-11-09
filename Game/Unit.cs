@@ -17,7 +17,9 @@ namespace ITParkStuding.Game
             _lvl = lvl;
         }
 
-        public int Health 
+        public bool IsDead = false;
+
+        public virtual int Health 
         { 
             get => _currentHealth;
            
@@ -37,14 +39,24 @@ namespace ITParkStuding.Game
         }
         private void Death()
         {
+            IsDead = true;
             Console.WriteLine($"{_name} dead");
         }
 
+        public virtual void Work()
+        {
+            Console.WriteLine($"{_name} is working");
+        }
 
         public void UnitInfo()
         {
             Console.WriteLine($"current health - {Health}");
             Console.WriteLine($" level -  {_lvl}");
+        }
+
+        public void TakeDamage(int damage)
+        {
+            Health -= damage;
         }
 
     }

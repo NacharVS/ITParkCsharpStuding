@@ -24,6 +24,11 @@ namespace ITParkStuding.Game
 
         public int ArrowsCount { get => _arrowsCount; set => _arrowsCount = value; }
 
+        public override void Work()
+        {
+            Console.WriteLine("Holding position");
+        }
+
 
     }
 }

@@ -33,10 +33,11 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Archer archer = new Archer(2, 5, 20);
-            Actions.RangeFight(archer);
-            Actions.RangeFight(archer);
-            Actions.RangeFight(archer);
+            Unit healer = new Healer("doc", 100, 100, 0);
+            healer.TakeDamage(120);
+            healer.UnitInfo();
+          
+           
 
 
 
