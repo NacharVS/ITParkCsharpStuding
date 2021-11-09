@@ -33,11 +33,23 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Unit healer = new Healer("doc", 100, 100, 0);
-            healer.TakeDamage(120);
-            healer.UnitInfo();
-          
-           
+            
+            try
+            {
+                int[] ads = new int[3];
+                Console.WriteLine();
+                for (int i = 0; i <= ads.Length; i++)
+                {
+                    Console.WriteLine(ads[i] = i);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
 
 
 
