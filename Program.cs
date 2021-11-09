@@ -33,10 +33,7 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Unit healer = new Healer("doc", 100, 100, 0);
-            healer.TakeDamage(120);
-            healer.UnitInfo();
-          
+            
            
 
 
