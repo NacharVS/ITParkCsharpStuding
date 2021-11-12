@@ -10,5 +10,6 @@ namespace ITParkStuding.Game
     {
         int Durability { get; set; }
         void Repair();
+        
     }
 }

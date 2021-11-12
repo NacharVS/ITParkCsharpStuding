@@ -33,29 +33,9 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            
-            try
-            {
-                int[] ads = new int[3];
-                Console.WriteLine();
-                for (int i = 0; i <= ads.Length; i++)
-                {
-                    Console.WriteLine(ads[i] = i);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-
-
-
-
-
-
-
+            IBuilding farm = new Farm(20);
+            farm.Repair();
+            Console.WriteLine();
 
         }
     }

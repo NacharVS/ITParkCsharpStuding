@@ -8,11 +8,26 @@ namespace ITParkStuding.Game
 {
     class Farm : IBuilding
     {
-        public int Durability { get => 20; set => throw new NotImplementedException(); }
+        private int _durability;
+
+        public Farm(int durability)
+        {
+            _durability = durability;
+        }
+        public int Durability 
+        { 
+            get => _durability; 
+            set
+            {
+                if (_durability <= 20)
+                    Repair();
+            }
+        }
 
         public void Repair()
         {
-            throw new NotImplementedException();
+            _durability += 20;
+            Console.WriteLine($"farm durability {_durability}");
         }
     }
 }
