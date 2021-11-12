@@ -48,7 +48,6 @@ namespace ITParkStuding
                 Console.WriteLine(ex.Message);
             }
 
-            Console.WriteLine();
 
 
 
