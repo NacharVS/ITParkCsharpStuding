@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITParkStuding.Game
 {
-    class Healer : Unit
+    class Healer : Unit, IUnit
     {
         public Healer(string name, int currentHealth, int maxHealth, int lvl) : base(name, currentHealth, maxHealth, lvl)
         {
@@ -18,6 +18,11 @@ namespace ITParkStuding.Game
             Console.WriteLine("SelfHeal");
         }
 
+        public void Move()
+        {
+            Console.WriteLine($"{_name} is moving");
+        }
+
         public override int Health 
         { 
             get => base.Health;
@@ -26,7 +31,9 @@ namespace ITParkStuding.Game
                 if (value < Health / 2)
                 {
                     base.Health = value;
-                    SelfHeal();                    
+                    if(!IsDead)
+                        SelfHeal();     
+
                 }
                 else
                     base.Health = value;

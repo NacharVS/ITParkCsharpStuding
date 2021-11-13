@@ -2,7 +2,7 @@
 
 namespace ITParkStuding.Game
 {
-    class Unit
+    class Unit 
     {
         internal string _name;
         private int _currentHealth;
@@ -28,6 +28,7 @@ namespace ITParkStuding.Game
                 if (value < 0)
                 {
                     _currentHealth = 0;
+                    IsDead = true;
                     Death();
                 }
                 else
@@ -38,8 +39,7 @@ namespace ITParkStuding.Game
             } 
         }
         private void Death()
-        {
-            IsDead = true;
+        {          
             Console.WriteLine($"{_name} dead");
         }
 
