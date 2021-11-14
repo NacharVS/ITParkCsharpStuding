@@ -33,10 +33,12 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Person pers1 = new Person("Ivan", "Ivanov", "director", 46, 123456);
+            Console.ReadLine();
+            //Person pers1 = new Person("Ivan", "Sergeev", "devops", 46, 123456);
+            //Person pers2 = new Person("Vitaliy", "Petrov", 40, 1111111);
             try
             {
-                Person.AddToDataBase(pers1);
+                Person.GetFromDataBase();
             }
             catch (Exception ex)
             {
