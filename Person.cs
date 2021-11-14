@@ -2,9 +2,9 @@
 
 namespace ITParkStuding
 {
-    class MongoExamples
+    class Person
     {
-        public MongoExamples(string name, string surname, string vacancy, int age, int driverCard)
+        public Person(string name, string surname, string vacancy, int age, int driverCard)
         {
             this.name = name;
             this.surname = surname;
@@ -19,12 +19,12 @@ namespace ITParkStuding
         public int age { get; set; }
         public int driverCard { get; set; }
 
-        public static void AddToDataBase(MongoExamples person)
+        public static void AddToDataBase(Person person)
         {
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ITPark");
-            var collection = database.GetCollection<MongoExamples>("Persons");
+            var collection = database.GetCollection<Person>("Persons");
             collection.InsertOne(person);
 
         }

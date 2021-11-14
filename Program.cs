@@ -33,10 +33,10 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            MongoExamples pers1 = new MongoExamples("Ivan", "Ivanov", "director", 46, 123456);
+            Person pers1 = new Person("Ivan", "Ivanov", "director", 46, 123456);
             try
             {
-                MongoExamples.AddToDataBase(pers1);
+                Person.AddToDataBase(pers1);
             }
             catch (Exception ex)
             {
