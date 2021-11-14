@@ -33,10 +33,17 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            IBuilding farm = new Farm(20);
-            farm.Repair();
+            Farm farm = new Farm(20, 0);
+            farm.Farming();
             Console.WriteLine();
 
+            WathingTower watchTow = new WathingTower(200);
+            watchTow.Alarm();
+            Console.WriteLine();
+
+            Castle castle = new Castle(200);
+            castle.Defence();
+            Console.WriteLine();
         }
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ITParkStuding.Game
 {
-    class WathingTower : IBuilding
+    class Castle : IBuilding
     {
         private int _durability;
+        private int _armor;
 
-        public WathingTower(int durability)
+        public Castle(int durability)
         {
             _durability = durability;
         }
@@ -21,24 +22,25 @@ namespace ITParkStuding.Game
             set
             {
                 if (_durability <= 200)
-                {
+                    Defence();
+                else
                     Repair();
-                    Alarm();
-                }
             }
         }
 
         public void Repair()
         {
-            _durability += 50;
-            Console.WriteLine($"Watching tower durability {_durability}");
+            _durability += 100;
+            Console.WriteLine($"Castle durability is {_durability}");
         }
 
-        public void Alarm()
+        public void Defence()
         {
-            _durability += 100;
-            Console.WriteLine($"Watching tower was attacked");
-            Console.WriteLine($"Watching tower durability {_durability}");
+            _armor = 200;
+            _durability += _armor;
+            Console.WriteLine($"Defence mode on");
+            Console.WriteLine($"Castle durability is {_durability}");
         }
+
     }
 }
