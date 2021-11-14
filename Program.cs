@@ -1,5 +1,6 @@
 ﻿using ITParkStuding.Game;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace ITParkStuding
@@ -33,17 +34,23 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            Console.ReadLine();
-            //Person pers1 = new Person("Ivan", "Sergeev", "devops", 46, 123456);
-            //Person pers2 = new Person("Vitaliy", "Petrov", 40, 1111111);
-            try
+            List<int> numbers = new List<int>();
+            List<int> number2 = new List<int>();
+            numbers.Add(1);
+            numbers.Add(22);
+            numbers.Add(23);
+            numbers.Add(3232);
+            numbers.Add(11);
+            numbers.Add(32);
+            number2.AddRange(numbers);
+            number2.AddRange(numbers);
+            number2.AddRange(numbers);
+            if (number2.Contains(111))
             {
-                Person.GetFromDataBase();
+                Console.WriteLine("yes");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            else
+                Console.WriteLine("no");
 
 
 

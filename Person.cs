@@ -52,16 +52,17 @@ namespace ITParkStuding
             collection.InsertOne(person);
         }
 
-        public static void GetFromDataBase()
+        public static void GetFromDataBase(string searchName, string searchSurname)
         {
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("ITPark");
             var collection = database.GetCollection<Person>("Persons");
-            Person persons = collection.Find(filter => filter.name == "Ivan" && filter.vacancy == "asdfasdf").Single();
-
-            
-                System.Console.WriteLine($"{persons.name} {persons.surname}");
+            Person persons = collection.Find(filter => filter.name == searchName && filter.surname == searchSurname).FirstOrDefault();
+            if(persons == null)
+                System.Console.WriteLine("no");
+            else
+                System.Console.WriteLine($"{persons.name} {persons.surname} {persons.vacancy} {persons.age}");
             
         }
     }
