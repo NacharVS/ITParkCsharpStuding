@@ -55,5 +55,9 @@ namespace ITParkStuding
         {
             Console.WriteLine("value changedvalue changedvalue changed");
         }
+        static void Method4()
+        {
+            Console.WriteLine("value changedvalue changedvalue changed");
+        }
     }
 }
