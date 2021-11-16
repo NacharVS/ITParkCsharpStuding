@@ -43,6 +43,24 @@ namespace ITParkStuding
         [BsonIgnoreIfDefault]
         public int driverCard { get; set; }
 
+        public double balance { get; set; }
+
+        public static double taxRate { get; set; }
+
+        public void ShowDeposit(int mouth)
+        {
+
+        }
+
+        public void Deposit(double summ)
+        {
+
+        }
+
+        public void Widthraw(double summ)
+        {
+
+        }
         public static void AddToDataBase(Person person)
         {
             var connectionString = "mongodb://localhost";
@@ -63,7 +81,17 @@ namespace ITParkStuding
                 System.Console.WriteLine("no");
             else
                 System.Console.WriteLine($"{persons.name} {persons.surname} {persons.vacancy} {persons.age}");
-            
+           
+        }
+
+        public static void ReplaceDocument(Person replaceDoc, string name)
+        {
+            var connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("ITPark");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.ReplaceOne(filter => filter.name == name, replaceDoc);
+
         }
     }
 }

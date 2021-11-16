@@ -34,34 +34,26 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>();
-            List<int> number2 = new List<int>();
-            numbers.Add(1);
-            numbers.Add(22);
-            numbers.Add(23);
-            numbers.Add(3232);
-            numbers.Add(11);
-            numbers.Add(32);
-            number2.AddRange(numbers);
-            number2.AddRange(numbers);
-            number2.AddRange(numbers);
-            if (number2.Contains(111))
-            {
-                Console.WriteLine("yes");
-            }
-            else
-                Console.WriteLine("no");
+            DelegatesEvents ec = new DelegatesEvents();
+            ec.ValueChangedEvent += Method1;
+            ec.ValueChangedEvent += Method1;
+            ec.Number = 5;         
+            Console.WriteLine(DelegatesEvents.taxRate);
+         
 
+        }
 
-
-
-
-
-
-
-
-
-
+        static void Method1(int n)
+        {
+            Console.WriteLine(n);
+        }
+        static void Method2()
+        {
+            Console.WriteLine("value changedvalue changed");
+        }
+        static void Method3()
+        {
+            Console.WriteLine("value changedvalue changedvalue changed");
         }
     }
 }
