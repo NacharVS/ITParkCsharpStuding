@@ -47,12 +47,31 @@ namespace ITParkStuding
             //Console.WriteLine();
 
 
-            DelegatesEvents ec = new DelegatesEvents();
-            ec.ValueChangedEvent += Method1;
-            ec.ValueChangedEvent += Method1;
-            ec.Number = 5;
-            Console.WriteLine(DelegatesEvents.taxRate);
+            //DelegatesEvents ec = new DelegatesEvents();
+            //ec.ValueChangedEvent += Method1;
+            //ec.ValueChangedEvent += Method1;
+            //ec.Number = 5;
+            //Console.WriteLine(DelegatesEvents.taxRate);
 
+            Person person = new Person("Ivan", "Ivanov", "economist", 20, 123456);
+            Person person1 = new Person("Ivan", "Sergeev", "manager", 30, 123654);
+            Person person2 = new Person("Sergey", "Ivanov", "administrator", 35);
+            Person person3 = new Person("John", "Ivanov", "administrator", 35);
+
+            try
+            {
+                //Person.AddToDataBase(person);
+                //Person.AddToDataBase(person1);
+                //Person.AddToDataBase(person2);
+                //Person.GetFromDataBase("Sergey", "Ivanov");
+                Person.ReplaceDocument(person3, "Sergey");
+            }
+
+            catch
+            {
+
+            }
+            
 
         }
 
