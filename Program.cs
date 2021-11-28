@@ -2,6 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading.Tasks;
 
 namespace ITParkStuding
 {
@@ -34,18 +38,33 @@ namespace ITParkStuding
 
         static void Main(string[] args)
         {
-            DelegatesEvents ec = new DelegatesEvents();
-            ec.ValueChangedEvent += Method1;
-            ec.ValueChangedEvent += Method1;
-            ec.Number = 5;         
-            Console.WriteLine(DelegatesEvents.taxRate);
-         
+            Task newTask = new Task(
+                () => Method1(5)
+                //{
+                //    for (int i = 0; i < 10; i++)
+                //    {
+                //        Thread.Sleep(1000);
+                //        Console.WriteLine("#");
+                //    }
+                //    Console.WriteLine("task end");
+                //}
+                );
+            newTask.Start();
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(500);
+                Console.WriteLine("*");
+            }
+            newTask.Wait();
+            Console.WriteLine("main end");
 
+            
         }
 
-        static void Method1(int n)
+        static async Task Method1(int n)
         {
-            Console.WriteLine(n);
+            
+
         }
         static void Method2()
         {

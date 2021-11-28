@@ -1,9 +1,11 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using System;
 
 namespace ITParkStuding
 {
+    [Serializable]
     class Person
     {
         public Person(string name, string surname, string vacancy, int age, int driverCard)
